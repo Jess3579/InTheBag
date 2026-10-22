@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Http
+
+@{
     ViewBag.Title = "It's All About the Results of your Actions";
 }
 
@@ -10,6 +12,6 @@
         Welcome to the Weekend
     </h2>
 
-    <h3>@ViewBag.Greeting</h3>
-    <h3>@ViewData["dayMessage"].ToString()</h3>
+    <h3>@Context.Session.GetString("Greeting")</h3>
+    <h3>@Context.Session.GetString("dayMessage")</h3>
 </div>

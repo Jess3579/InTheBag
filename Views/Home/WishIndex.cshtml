@@ -1,0 +1,17 @@
+﻿@using InTheBag.Models
+@using Microsoft.AspNetCore.Http
+@using System.Text.Json
+
+@{
+    ViewData["Title"] = "Wish Index";
+
+    string json = Context.Session.GetString("wish");
+
+    Wishes wishes = JsonSerializer.Deserialize<Wishes>(json);
+}
+
+<h1>My Wishes</h1>
+
+<p>@wishes.Wish1</p>
+<p>@wishes.Wish2</p>
+<p>@wishes.Wish3</p>
